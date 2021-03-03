@@ -3,9 +3,9 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs'
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'com.google.firebase.appdistribution'
-apply plugin: 'com.google.firebase.crashlytics'
+//apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.firebase.appdistribution'
+//apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion 30
@@ -13,12 +13,18 @@ android {
 
     defaultConfig {
         applicationId "com.example.mysampleonlineapplication"
-        minSdkVersion 16
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+
+        buildFeatures{
+            dataBinding true
+        }
+
     }
 
     buildTypes {
@@ -141,10 +147,10 @@ dependencies {
     implementation libraries.timber
     implementation libraries.sdp
 
-    implementation libraries.firebaseBom
-    implementation libraries.firebaseMessaging
-    implementation libraries.firebaseAnalytics
-    implementation libraries.firebaseCrashlytics
+//    implementation libraries.firebaseBom
+//    implementation libraries.firebaseMessaging
+//    implementation libraries.firebaseAnalytics
+//    implementation libraries.firebaseCrashlytics
 
     implementation libraries.passwordComplexity
 
@@ -179,5 +185,5 @@ dependencies {
     //tooltip
     implementation libraries.balloon
 
-    implementation libraries.rangeSeekBar
+//    implementation libraries.rangeSeekBar
 }
