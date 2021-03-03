@@ -1,0 +1,203 @@
+ext.versions = [
+
+        // plugins version
+        gradle                   : '4.0.1',
+        kotlin                   : '1.4.10',
+        googleServices           : '4.3.4',
+        firebaseAppDistribution  : '2.0.0',
+        firebaseCrashlyticsPlugin: '2.3.0',
+        navigationSafeArgs       : '1.0.0',
+        appsflyer                : '6.0.0',
+        installreferrer          : '1.1',
+
+        // libraries
+        androidxCore             : '1.3.2',
+        appCompat                : '1.2.0',
+        legacySupport            : '1.0.0',
+
+        // start: ui
+        androidMaterial          : '1.2.0-alpha04',
+        constraintLayout         : '2.0.0',
+        recyclerView             : '1.1.0',
+        cardView                 : '1.0.0',
+        browser                  : '1.3.0-alpha06',
+        circleImageView          : '3.1.0',
+        gifDrawable              : '1.2.21',
+        swipeLayout              : '1.2.0@aar',
+        uCrop                    : '2.2.6',
+        googleLibPhoneNumber     : '8.12.11',
+        dexterPermissionHelper   : '6.2.1',
+        pinView                  : '1.4.3',
+        // end: ui
+
+        androidXBiometric        : '1.0.1',
+
+        lifeCycle                : '2.2.0',
+
+        fragment                 : '1.2.5',
+        navigationFragment       : '2.3.1',
+
+        retrofit                 : '2.9.0',
+
+        okHttp                   : '4.9.0',
+        okHttpLogging            : '4.9.0',
+
+        dagger2                  : '2.29.1',
+        dagger2Android           : '2.29.1',
+
+        rxJava                   : '2.2.20',
+        rxKotlin                 : '2.4.0',
+        rxAndroid                : '2.1.1',
+        rxDogTag                 : '1.0.0',
+
+        room                     : '2.2.5',
+
+        glide                    : '4.11.0',
+
+        timber                   : '4.7.1',
+        scalableSize             : '1.0.6',
+
+        firebaseBom              : '26.1.1',
+        firebaseMessaging        : '21.0.0',
+        firebaseAnalytics        : '17.6.0',
+        firebaseCrashlytics      : '17.2.2',
+
+        passwordComplexity       : '1.3.0',
+
+        zxing                    : '3.3.0',
+        zxingAndroid             : '4.1.0',
+
+        // test libraries
+        androidXTestCore         : '1.3.0',
+        androidArchCore          : '1.1.1',
+        jUnit                    : '4.13.1',
+        androidXTestRunner       : '1.3.0',
+        androidXEspresso         : '3.3.0',
+
+        robolectric              : '4.4',
+
+        mockito                  : '3.5.13',
+        mockitoKotlin            : '2.2.0',
+
+        assertj                  : '3.17.2',
+
+        dataFactory              : '0.8',
+
+        //tooltip
+        balloon                  : '1.2.7',
+
+        rangeSeekBar             : '3.0.0',
+
+        retrofitScalarConverter  : "2.9.0"
+
+
+]
+
+ext.gradlePlugins = [
+        gradle                 : "com.android.tools.build:gradle:$versions.gradle",
+        kotlin                 : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+        googleServices         : "com.google.gms:google-services:$versions.googleServices",
+        firebaseAppDistribution: "com.google.firebase:firebase-appdistribution-gradle:$versions.firebaseAppDistribution",
+        firebaseCrashlytics    : "com.google.firebase:firebase-crashlytics-gradle:$versions.firebaseCrashlyticsPlugin",
+        navigationSafeArgs     : "android.arch.navigation:navigation-safe-args-gradle-plugin:$versions.navigationSafeArgs"
+]
+
+ext.libraries = [
+        kotlinStdLib           : "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin",
+
+        androidxCore           : "androidx.core:core-ktx:$versions.androidxCore",
+        appCompat              : "androidx.appcompat:appcompat:$versions.appCompat",
+        legacySupport          : "androidx.legacy:legacy-support-v4:$versions.legacySupport",
+        appsflyer              : "com.appsflyer:af-android-sdk:$versions.appsflyer",
+        installreferrer        : "com.android.installreferrer:installreferrer:$versions.installreferrer",
+
+        // start: ui
+        androidMaterial        : "com.google.android.material:material:$versions.androidMaterial",
+        constraintLayout       : "androidx.constraintlayout:constraintlayout:$versions.constraintLayout",
+        recyclerView           : "androidx.recyclerview:recyclerview:$versions.recyclerView",
+        cardView               : "androidx.cardview:cardview:$versions.cardView",
+        browser                : "androidx.browser:browser:$versions.browser",
+        circleImageView        : "de.hdodenhof:circleimageview:$versions.circleImageView",
+        gifDrawable            : "pl.droidsonroids.gif:android-gif-drawable:$versions.gifDrawable",
+        swipeLayout            : "com.daimajia.swipelayout:library:$versions.swipeLayout",
+        uCrop                  : "com.github.yalantis:ucrop:$versions.uCrop",
+        googleLibPhoneNumber   : "com.googlecode.libphonenumber:libphonenumber:$versions.googleLibPhoneNumber",
+        dexterPermissionHelper : "com.karumi:dexter:$versions.dexterPermissionHelper",
+        pinView                : "com.chaos.view:pinview:$versions.pinView",
+        // end: ui
+
+        androidXBiometric      : "androidx.biometric:biometric:$versions.androidXBiometric",
+
+        lifeCycleExtensions    : "androidx.lifecycle:lifecycle-extensions:$versions.lifeCycle",
+        lifeCycleViewModelKtx  : "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifeCycle",
+
+        navigationFragment     : "androidx.navigation:navigation-fragment-ktx:$versions.navigationFragment",
+        navigationUiExtensions : "androidx.navigation:navigation-ui-ktx:$versions.navigationFragment",
+
+        retrofit               : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+        retrofitGsonConverter  : "com.squareup.retrofit2:converter-gson:$versions.retrofit",
+        retrofitRxJavaAdapter  : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
+        retrofitScalarConverter: "com.squareup.retrofit2:converter-scalars:$versions.retrofitScalarConverter",
+
+        okHttp                 : "com.squareup.okhttp3:okhttp:$versions.okHttp",
+        okHttpLogging          : "com.squareup.okhttp3:logging-interceptor:$versions.okHttpLogging",
+
+        dagger2                : "com.google.dagger:dagger:$versions.dagger2",
+        dagger2Compiler        : "com.google.dagger:dagger-compiler:$versions.dagger2",
+
+        dagger2Android         : "com.google.dagger:dagger-android:$versions.dagger2Android",
+        dagger2AndroidSupport  : "com.google.dagger:dagger-android-support:$versions.dagger2Android",
+        dagger2AndroidCompiler : "com.google.dagger:dagger-android-processor:$versions.dagger2Android",
+
+        rxJava                 : "io.reactivex.rxjava2:rxjava:$versions.rxJava",
+        rxKotlin               : "io.reactivex.rxjava2:rxkotlin:$versions.rxKotlin",
+        rxAndroid              : "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
+        rxDogTag               : "com.uber.rxdogtag:rxdogtag:$versions.rxDogTag",
+
+        roomRuntime            : "androidx.room:room-runtime:$versions.room",
+        roomRxJava             : "androidx.room:room-rxjava2:$versions.room",
+        roomCompiler           : "androidx.room:room-compiler:$versions.room",
+
+        glide                  : "com.github.bumptech.glide:glide:$versions.glide",
+        glideCompiler          : "com.github.bumptech.glide:compiler:$versions.glide",
+
+        timber                 : "com.jakewharton.timber:timber:$versions.timber",
+        sdp                    : "com.intuit.sdp:sdp-android:$versions.scalableSize",
+
+        firebaseBom            : "com.google.firebase:firebase-bom:$versions.firebaseBom",
+        firebaseMessaging      : "com.google.firebase:firebase-messaging:$versions.firebaseMessaging",
+        firebaseAnalytics      : "com.google.firebase:firebase-analytics:$versions.firebaseAnalytics",
+        firebaseCrashlytics    : "com.google.firebase:firebase-crashlytics:$versions.firebaseCrashlytics",
+
+        passwordComplexity     : "com.nulab-inc:zxcvbn:$versions.passwordComplexity",
+
+        zxing                  : "com.google.zxing:core:$versions.zxing",
+        zxingAndroid           : "com.journeyapps:zxing-android-embedded:$versions.zxingAndroid",
+
+        //tooltip
+        balloon                : "com.github.skydoves:balloon:$versions.balloon",
+
+        rangeSeekBar           : "com.github.Jay-Goo:RangeSeekBar:$versions.rangeSeekBar"
+]
+
+ext.testLibraries = [
+        androidXTestCore   : "androidx.test:core:$versions.androidXTestCore",
+        androidArchCore    : "android.arch.core:core-testing:$versions.androidArchCore",
+        jUnit              : "junit:junit:$versions.jUnit",
+        androidXTestRunner : "androidx.test:runner:$versions.androidXTestRunner",
+        androidXEspresso   : "androidx.test.espresso:espresso-core:$versions.androidXEspresso",
+
+        roomTestHelper     : "androidx.room:room-testing:$versions.room",
+
+        okHttpMockWebServer: "com.squareup.okhttp3:mockwebserver:$versions.okHttp",
+
+        robolectric        : "org.robolectric:robolectric:$versions.robolectric",
+
+        mockito            : "org.mockito:mockito-core:$versions.mockito",
+        mockitoAndroid     : "org.mockito:mockito-android:$versions.mockito",
+        mockitoKotlin      : "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mockitoKotlin",
+
+        assertj            : "org.assertj:assertj-core:$versions.assertj",
+
+        dataFactory        : "org.fluttercode.datafactory:datafactory:$versions.dataFactory"
+]

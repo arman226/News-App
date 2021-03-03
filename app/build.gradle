@@ -1,0 +1,183 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.appdistribution'
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.mysampleonlineapplication"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    flavorDimensions 'default'
+
+    productFlavors {
+        def keysFile = rootProject.file('api-keys.properties')
+
+        def keys = new Properties()
+        keys.load(new FileInputStream(keysFile))
+
+        dev {
+            applicationIdSuffix = '.dev'
+            versionCode 1
+            versionName "1.0.0"
+            resValue "string", "app_name", "News App-dev"
+
+            buildConfigField 'String', 'BASE_URL', keys.news_base_url
+            buildConfigField 'String', 'BASIC_AUTH', keys.news_api_key
+        }
+
+        prod {
+            applicationIdSuffix = '.prod'
+            versionCode 1
+            versionName "1.0.0"
+            resValue "string", "app_name", "News App"
+
+            buildConfigField 'String', 'BASE_URL', keys.news_base_url
+            buildConfigField 'String', 'BASIC_AUTH', keys.news_api_key
+
+
+        }
+    }
+
+}
+
+dependencies {
+//
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+//    implementation 'androidx.core:core-ktx:1.3.2'
+//    implementation 'androidx.appcompat:appcompat:1.2.0'
+//    implementation 'com.google.android.material:material:1.3.0'
+//    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+//    testImplementation 'junit:junit:4.+'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libraries.kotlinStdLib
+    implementation libraries.androidxCore
+    implementation libraries.appCompat
+    implementation libraries.legacySupport
+    implementation libraries.appsflyer
+    implementation libraries.installreferrer
+
+    // start: ui
+    implementation libraries.androidMaterial
+    implementation libraries.constraintLayout
+    implementation libraries.recyclerView
+    implementation libraries.cardView
+    implementation libraries.browser
+    implementation libraries.circleImageView
+    implementation libraries.gifDrawable
+    implementation libraries.swipeLayout
+    implementation libraries.uCrop
+    implementation libraries.googleLibPhoneNumber
+    implementation libraries.dexterPermissionHelper
+    implementation libraries.pinView
+    // end: ui
+
+    implementation libraries.androidXBiometric
+
+    implementation libraries.lifeCycleExtensions
+    implementation libraries.lifeCycleViewModelKtx
+
+    implementation libraries.navigationFragment
+    implementation libraries.navigationUiExtensions
+
+    implementation libraries.retrofit
+    implementation libraries.retrofitGsonConverter
+    implementation libraries.retrofitRxJavaAdapter
+    implementation libraries.retrofitScalarConverter
+
+
+    implementation libraries.okHttp
+    implementation libraries.okHttpLogging
+
+    implementation libraries.dagger2
+    kapt libraries.dagger2Compiler
+
+    implementation libraries.dagger2Android
+    implementation libraries.dagger2AndroidSupport
+    kapt libraries.dagger2AndroidCompiler
+
+    implementation libraries.rxJava
+    implementation libraries.rxKotlin
+    implementation libraries.rxAndroid
+    implementation libraries.rxDogTag
+
+    implementation libraries.roomRuntime
+    implementation libraries.roomRxJava
+    kapt libraries.roomCompiler
+
+    implementation libraries.glide
+    kapt libraries.glideCompiler
+
+    implementation libraries.timber
+    implementation libraries.sdp
+
+    implementation libraries.firebaseBom
+    implementation libraries.firebaseMessaging
+    implementation libraries.firebaseAnalytics
+    implementation libraries.firebaseCrashlytics
+
+    implementation libraries.passwordComplexity
+
+    implementation libraries.zxing
+    implementation(libraries.zxingAndroid) { transitive = false }
+
+    // start: test libraries
+    testImplementation testLibraries.androidXTestCore // obtain context for unit tests
+    testImplementation testLibraries.androidArchCore
+    testImplementation testLibraries.jUnit
+    androidTestImplementation testLibraries.androidXTestRunner
+    androidTestImplementation testLibraries.androidXEspresso
+
+    testImplementation testLibraries.roomTestHelper
+
+    testImplementation testLibraries.okHttpMockWebServer
+    androidTestImplementation testLibraries.okHttpMockWebServer
+
+    testImplementation testLibraries.robolectric
+
+    testImplementation testLibraries.mockito
+    androidTestImplementation testLibraries.mockitoAndroid
+    testImplementation testLibraries.mockitoKotlin
+
+    testImplementation testLibraries.assertj
+
+    implementation testLibraries.dataFactory
+    testImplementation testLibraries.dataFactory
+    androidTestImplementation testLibraries.dataFactory
+    // end: test libraries
+
+    //tooltip
+    implementation libraries.balloon
+
+    implementation libraries.rangeSeekBar
+}
