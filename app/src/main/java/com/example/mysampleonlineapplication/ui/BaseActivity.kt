@@ -6,7 +6,7 @@ import android.util.Log
 import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.disposables.CompositeDisposable
 
-class BaseActivity:DaggerAppCompatActivity() {
+abstract class BaseActivity:DaggerAppCompatActivity() {
 
     protected val TAG = javaClass.simpleName
     private val compositeDisposable = CompositeDisposable()
